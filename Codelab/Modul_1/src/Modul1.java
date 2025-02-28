@@ -1,18 +1,18 @@
 import java.time.LocalDate; // Mengimpor kelas LocalDate untuk mendapatkan informasi tanggal dan waktu
-import java.util.Scanner; // Mengimpor kelas Scanner untuk memungkinkan input dari pengguna
+import java.util.Scanner; // Mengimpor Scanner untuk input dari user
 
 public class Modul1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // Membuat objek Scanner untuk input dari user
         
         System.out.print("Masukkan nama: "); 
-        String nama = scanner.nextLine(); // Meminta input nama dari pengguna
+        String nama = scanner.nextLine(); // Meminta input nama dari user
 
         System.out.print("Masukkan jenis kelamin (P/L): ");
-        char jenisKelamin = scanner.next().charAt(0); // Meminta input jenis kelamin (P/L) dari pengguna
+        char jenisKelamin = scanner.next().charAt(0); // Meminta input jenis kelamin p/l dari user
 
         System.out.print("Masukkan tahun lahir: ");
-        int tahunLahir = scanner.nextInt(); // Meminta input tahun lahir dari pengguna
+        int tahunLahir = scanner.nextInt(); // Meminta input tahun lahir dari user
 
         scanner.close(); // Menutup objek scanner setelah input selesai
 
@@ -22,11 +22,11 @@ public class Modul1 {
         
         String jenisKelaminStr;
         if (jenisKelamin == 'L' || jenisKelamin == 'l') {
-            jenisKelaminStr = "Laki-laki";  // Jika input L/l maka "Laki-laki"
+            jenisKelaminStr = "Laki-laki";  // Jika input L/l maka laki-laki
         } else if (jenisKelamin == 'P' || jenisKelamin == 'p') {
-            jenisKelaminStr = "Perempuan"; // Jika input P/p maka "Perempuan"
+            jenisKelaminStr = "Perempuan"; // Jika input P/p maka perempuan
         } else {
-            jenisKelaminStr = "Tidak Valid"; // Jika input selain P/p atau L/l maka "Tidak Valid"
+            jenisKelaminStr = "Tidak Valid"; // Jika input selain P/p atau L/l maka maka tidak valid
         }
 
         // Menampilkan hasil input
