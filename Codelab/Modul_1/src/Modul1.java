@@ -1,4 +1,4 @@
-import java.time.LocalDate; // Mengimpor kelas LocalDate dari paket java.time untuk mendapatkan informasi tanggal dan waktu
+import java.time.LocalDate; // Mengimpor kelas LocalDate untuk mendapatkan informasi tanggal dan waktu
 import java.util.Scanner; // Mengimpor kelas Scanner untuk memungkinkan input dari pengguna
 
 public class Modul1 {
