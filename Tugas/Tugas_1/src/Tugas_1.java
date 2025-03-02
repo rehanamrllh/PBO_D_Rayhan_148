@@ -10,6 +10,7 @@ public class Tugas_1 {
         System.out.println("2. Mahasiswa");
         System.out.print("Masukkan pilihan (1 atau 2): ");
         int pilihan = scanner.nextInt(); // Input plihan 1 atau 2
+        scanner.nextLine();
 
 
         if (pilihan == 1) { // Jika user memilih no1
