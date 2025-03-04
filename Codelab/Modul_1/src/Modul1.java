@@ -26,7 +26,7 @@ public class Modul1 {
         } else if (jenisKelamin == 'P' || jenisKelamin == 'p') {
             jenisKelaminStr = "Perempuan"; // Jika input P/p maka perempuan
         } else {
-            jenisKelaminStr = "Tidak Valid"; // Jika input selain P/p atau L/l maka maka tidak vali
+            jenisKelaminStr = "Tidak Valid"; // Jika input selain P/p atau L/l maka maka tidak valid
         }
 
         // Menampilkan hasil input
