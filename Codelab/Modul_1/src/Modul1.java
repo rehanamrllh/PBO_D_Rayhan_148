@@ -31,8 +31,8 @@ public class Modul1 {
 
         // Menampilkan hasil input
         System.out.println("\nData Diri:");
-        System.out.println("Nama    : " + nama); 
-        System.out.println("Jenis Kelamin: " + jenisKelaminStr); 
-        System.out.println("Umur    : " + umur + " tahun"); 
+        System.out.println("Nama: " + nama);
+        System.out.println("Jenis kelamin: " + jenisKelaminStr);
+        System.out.println("Umur: " + umur + "Tahun"); 
     }
 }
