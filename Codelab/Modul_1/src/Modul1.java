@@ -33,6 +33,6 @@ public class Modul1 {
         System.out.println("\nData Diri:");
         System.out.println("Nama: " + nama);
         System.out.println("Jenis kelamin: " + jenisKelaminStr);
-        System.out.println("Umur: " + umur + "Tahun"); 
+        System.out.println("Umur: " + umur + " tahun"); 
     }
 }
