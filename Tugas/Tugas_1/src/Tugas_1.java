@@ -18,7 +18,6 @@ public class Tugas_1 {
             System.out.print("Masukkan password: ");
             String password = scanner.nextLine(); 
 
-            
             String usernameValid = "Admin148"; 
             String passwordValid = "Password148"; 
 
@@ -44,7 +43,7 @@ public class Tugas_1 {
                 System.out.println("Login gagal! Nama atau NIM salah.");
             }
         } else {
-            System.out.println("Pilihan tidak valid."); 
+            System.out.println("Pilihan tidak vali."); 
         }
 
         scanner.close(); 
