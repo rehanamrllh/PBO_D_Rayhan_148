@@ -12,14 +12,12 @@ public class Tugas_1 {
         int pilihan = scanner.nextInt(); // Input plihan 1 atau 2
         scanner.nextLine();
 
-
         if (pilihan == 1) { // Jika user memilih no1
             System.out.print("Masukkan username: ");
             String username = scanner.nextLine(); // Input username admin
             System.out.print("Masukkan password: ");
             String password = scanner.nextLine(); // Input password admin
 
-            
             String usernameValid = "Admin148"; // Username yang valid untuk admin
             String passwordValid = "Password148"; // Password yang valid untuk admin
 
