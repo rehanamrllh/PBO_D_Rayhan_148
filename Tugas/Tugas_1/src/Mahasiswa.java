@@ -1,23 +1,22 @@
-import java.util.Scanner;
-
 public class Mahasiswa {
-    String namaMahasiswa= "Rayhan Amrullah";
-    String nimMahasiswa = "202410370110148";
-    String nama, nim;
+    private String nama;
+    private String nim;
 
-    Scanner input = new Scanner(System.in);
+    // Constructor
+    public Mahasiswa(String nama, String nim) {
+        this.nama = nama;
+        this.nim = nim;
+    }
 
-    void login(){
-        System.out.println("Masukkan Nama: ");
-        nama = input.nextLine();
-        System.out.println("Masukkan NIM: ");
-        nim = input.nextLine();
+    // Metode untuk verifikasi login
+    public boolean login(String inputNama, String inputNim) {
+        return this.nama.equals(inputNama) && this.nim.equals(inputNim);
+    }
 
-        if (nama.equals(namaMahasiswa) && nim.equals(nimMahasiswa)) {
-            System.out.println(":Login mahasiswa berhasil");
-        } else {
-            System.out.println("Login gagal! Nama atau NIM salah");
-        }
-
+    // Metode untuk menampilkan informasi mahasiswa
+    public void displayInfo() {
+        System.out.println("Informasi Mahasiswa:");
+        System.out.println("Nama: " + this.nama);
+        System.out.println("NIM: " + this.nim);
     }
 }

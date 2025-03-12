@@ -1,24 +1,15 @@
-import java.util.Scanner;
-
 public class Admin {
-    String usernameAdmin= "Admin148";
-    String passwordAdmin = "Password148";
-    String username, password;
+    private String username;
+    private String password;
 
-    Scanner input = new Scanner(System.in);
-
-    void login(){
-        System.out.println("Masukkan Username: ");
-        username = input.nextLine();
-        System.out.println("Masukkan Password: ");
-        password = input.nextLine();
-
-        if (username.equals(usernameAdmin) && password.equals(passwordAdmin)) {
-            System.out.println(":Login admin berhasil");
-        } else {
-            System.out.println("Login gagal! Username atau Passwrod salah");
-        }
-
+    // Constructor
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
-    
+
+    // Metode untuk verifikasi login
+    public boolean login(String inputUsername, String inputPassword) {
+        return this.username.equals(inputUsername) && this.password.equals(inputPassword);
+    }
 }
