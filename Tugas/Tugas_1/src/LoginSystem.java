@@ -23,12 +23,7 @@ public class LoginSystem {
                 String inputUsername = scanner.nextLine();
                 System.out.print("Masukkan password: ");
                 String inputPassword = scanner.nextLine();
-
-                if (admin.login(inputUsername, inputPassword)) {
-                    System.out.println("Login Admin berhasil!");
-                } else {
-                    System.out.println("Username atau password salah!");
-                }
+                admin.login(inputUsername, inputPassword); // Memanggil metode login Admin
                 break;
 
             case 2:
@@ -37,13 +32,7 @@ public class LoginSystem {
                 String inputNama = scanner.nextLine();
                 System.out.print("Masukkan NIM: ");
                 String inputNim = scanner.nextLine();
-
-                if (mahasiswa.login(inputNama, inputNim)) {
-                    System.out.println("Login Mahasiswa berhasil!");
-                    mahasiswa.displayInfo();
-                } else {
-                    System.out.println("Nama atau NIM salah!");
-                }
+                mahasiswa.login(inputNama, inputNim); // Memanggil metode login Mahasiswa
                 break;
 
             default:

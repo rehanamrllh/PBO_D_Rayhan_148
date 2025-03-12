@@ -9,7 +9,11 @@ public class Admin {
     }
 
     // Metode untuk verifikasi login
-    public boolean login(String inputUsername, String inputPassword) {
-        return this.username.equals(inputUsername) && this.password.equals(inputPassword);
+    public void login(String inputUsername, String inputPassword) {
+        if (this.username.equals(inputUsername) && this.password.equals(inputPassword)) {
+            System.out.println("Login Admin berhasil!");
+        } else {
+            System.out.println("Username atau password salah!");
+        }
     }
 }
