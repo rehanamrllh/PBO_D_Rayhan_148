@@ -8,8 +8,8 @@ public class LoginSystem {
         Mahasiswa mahasiswa = new Mahasiswa();
 
         System.out.println("Selamat datang di Sistem Login");
-        System.out.println("1. Login sebagai Admin");
-        System.out.println("2. Login sebagai Mahasiswa");
+        System.out.println("1. Admin");
+        System.out.println("2. Mahasiswa");
         System.out.print("Pilih opsi (1/2): ");
         int pilihan = scanner.nextInt();
         scanner.nextLine(); 
@@ -24,7 +24,6 @@ public class LoginSystem {
                 break;
 
             case 2:
-                // Login sebagai Mahasiswa
                 System.out.print("Masukkan nama: ");
                 String inputNama = scanner.nextLine();
                 System.out.print("Masukkan NIM: ");
