@@ -12,7 +12,7 @@ public class LoginSystem {
         System.out.println("2. Mahasiswa");
         System.out.print("Pilih opsi (1/2): ");
         int pilihan = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         switch (pilihan) {
             case 1:
@@ -20,7 +20,7 @@ public class LoginSystem {
                 String inputUsername = scanner.nextLine();
                 System.out.print("Masukkan password: ");
                 String inputPassword = scanner.nextLine();
-                admin.login(inputUsername, inputPassword); 
+                admin.login(inputUsername, inputPassword);
                 break;
 
             case 2:
