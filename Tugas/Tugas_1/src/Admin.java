@@ -1,6 +1,6 @@
 public class Admin {
-    private final String validUsername = "admin";
-    private final String validPassword = "admin123";
+    private final String validUsername = "admin148";
+    private final String validPassword = "password148";
 
     public void login(String inputUsername, String inputPassword) {
         if (validUsername.equals(inputUsername) && validPassword.equals(inputPassword)) {
