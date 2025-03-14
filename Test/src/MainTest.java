@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Main {
+public class MainTest {
     public static void main(String[] args) {
         Farmer farmer1 = new Farmer();
         Farmer farmer2 = new Farmer();
@@ -19,6 +19,9 @@ public class Main {
 
         System.out.println("Hello, world!");
         System.out.println("Current date and time: " + new Date());
+
+        farmer1.talk();
+        farmer2.talk();
     }
     
 }
