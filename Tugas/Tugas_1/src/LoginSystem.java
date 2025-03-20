@@ -4,35 +4,49 @@ public class LoginSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Admin admin = new Admin();
-        Mahasiswa mahasiswa = new Mahasiswa();
+        while (true) {
+            System.out.println("\n=== Sistem Login ===");
+            System.out.println("1. Admin");
+            System.out.println("2. Mahasiswa");
+            System.out.println("3. Keluar");
+            System.out.print("Pilih menu (1-3): ");
 
-        System.out.println("Selamat datang di Sistem Login");
-        System.out.println("1. Admin");
-        System.out.println("2. Mahasiswa");
-        System.out.print("Pilih opsi (1/2): ");
-        int pilihan = scanner.nextInt();
-        scanner.nextLine();
+            int pilihan = scanner.nextInt();
+            scanner.nextLine();
 
-        switch (pilihan) {
-            case 1:
-                System.out.print("Masukkan username: ");
-                String inputUsername = scanner.nextLine();
-                System.out.print("Masukkan password: ");
-                String inputPassword = scanner.nextLine();
-                admin.login(inputUsername, inputPassword);
+            if (pilihan == 3) {
+                System.out.println("Terima kasih telah menggunakan sistem login.");
                 break;
+            }
 
-            case 2:
-                System.out.print("Masukkan nama: ");
-                String inputNama = scanner.nextLine();
-                System.out.print("Masukkan NIM: ");
-                String inputNim = scanner.nextLine();
-                mahasiswa.login(inputNama, inputNim);
-                break;
+            switch (pilihan) {
+                case 1:
+                    System.out.print("Masukkan username: ");
+                    String username = scanner.nextLine();
+                    System.out.print("Masukkan password: ");
+                    String password = scanner.nextLine();
 
-            default:
-                System.out.println("Pilihan tidak valid!");
+                    Admin admin = new Admin("Admin System", "ADMIN001", username, password);
+                    if (admin.login(username, password)) {
+                        admin.displayInfo();
+                    }
+                    break;
+
+                case 2:
+                    System.out.print("Masukkan nama: ");
+                    String nama = scanner.nextLine();
+                    System.out.print("Masukkan NIM: ");
+                    String nim = scanner.nextLine();
+
+                    Mahasiswa mahasiswa = new Mahasiswa(nama, nim);
+                    if (mahasiswa.login(nama, nim)) {
+                        mahasiswa.displayInfo();
+                    }
+                    break;
+
+                default:
+                    System.out.println("\nPilihan tidak valid! Silakan pilih 1-3.");
+            }
         }
 
         scanner.close();
