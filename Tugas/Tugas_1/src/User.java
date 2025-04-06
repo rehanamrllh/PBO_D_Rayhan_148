@@ -24,7 +24,7 @@ public class User {
     }
 
     public boolean login(String inputNama, String inputNim) {
-        return false; // Method akan di-override oleh subclass
+        return false;
     }
 
     public void displayInfo() {
