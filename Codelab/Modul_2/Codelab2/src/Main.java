@@ -1,4 +1,4 @@
-public class MainTest {
+public class Main {
     public static void main(String[] args) {
 
         RekeningBank rekening1 = new RekeningBank();
