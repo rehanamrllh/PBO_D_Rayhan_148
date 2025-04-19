@@ -22,7 +22,7 @@ public class Admin extends User {
     @Override
     public void displayInfo() {
         System.out.println("\nLogin Admin Berhasil!");
-        System.out.println("Informasi Admin:");
+        System.out.println("\nInformasi Admin:");
         System.out.println("Username: " + validUsername);
         System.out.println("Password: " + validPassword);
     }
