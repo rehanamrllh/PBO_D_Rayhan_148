@@ -1,52 +1,50 @@
 import java.util.Scanner;
 
-public class LoginSystem {
+class LoginSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("\n=== Sistem Login ===");
-            System.out.println("1. Admin");
-            System.out.println("2. Mahasiswa");
-            System.out.println("3. Keluar");
-            System.out.print("Pilih menu (1-3): ");
+       
+        Admin admin = new Admin("Admin148", "ADM001", "admin148", "admin148");
+        Mahasiswa mahasiswa = new Mahasiswa("Rayhan Amrullah", "202410370110148");
 
-            int pilihan = scanner.nextInt();
-            scanner.nextLine();
+        System.out.println("== SISTEM LOGIN ==");
+        System.out.println("1. Admin");
+        System.out.println("2. Mahasiswa");
+        System.out.print("Pilih jenis login (1/2): ");
 
-            if (pilihan == 3) {
-                System.out.println("Terima kasih telah menggunakan sistem login.");
+        String pilihan = scanner.nextLine();
+
+        switch (pilihan) {
+            case "1":
+                System.out.print("\nUsername: ");
+                String username = scanner.nextLine();
+                System.out.print("Password: ");
+                String password = scanner.nextLine();
+
+                if (admin.login(username, password)) {
+                    admin.displayInfo();
+                } else {
+                    System.out.println("\nUsername atau password salah!");
+                }
                 break;
-            }
 
-            switch (pilihan) {
-                case 1:
-                    System.out.print("Masukkan username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Masukkan password: ");
-                    String password = scanner.nextLine();
+            case "2":
+                System.out.print("\nNama: ");
+                String nama = scanner.nextLine();
+                System.out.print("NIM: ");
+                String nim = scanner.nextLine();
 
-                    Admin admin = new Admin("Admin System", "ADMIN001", username, password);
-                    if (admin.login(username, password)) {
-                        admin.displayInfo();
-                    }
-                    break;
+                if (mahasiswa.login(nama, nim)) {
+                    mahasiswa.displayInfo();
+                } else {
+                    System.out.println("\nNama atau NIM salah!");
+                }
+                break;
 
-                case 2:
-                    System.out.print("Masukkan nama: ");
-                    String nama = scanner.nextLine();
-                    System.out.print("Masukkan NIM: ");
-                    String nim = scanner.nextLine();
-
-                    Mahasiswa mahasiswa = new Mahasiswa(nama, nim);
-                    if (mahasiswa.login(nama, nim)) {
-                        mahasiswa.displayInfo();
-                    }
-                    break;
-
-                default:
-                    System.out.println("\nPilihan tidak valid! Silakan pilih 1-3.");
-            }
+            default:
+                System.out.println("\nPilihan tidak valid!");
+                break;
         }
 
         scanner.close();
