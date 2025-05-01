@@ -16,10 +16,10 @@ public class Main {
         anggota1.displayInfo();
         anggota2.displayInfo();
 
-        anggota1.pinjamBuku("Madilog");
-        anggota2.pinjamBuku("Hainuwele: Sang Putri Kelapa", 7);
+        anggota1.pinjamBuku("Madilog", 5);
+        anggota2.pinjamBuku("Harry Potter and the Philosopher's Stone", 10);
 
         anggota1.kembalikanBuku("Madilog");
-        anggota2.kembalikanBuku("Hainuwele: Sang Putri Kelapa");
+        anggota2.kembalikanBuku("Harry Potter and the Philosopher's Stone");
     }
 }
