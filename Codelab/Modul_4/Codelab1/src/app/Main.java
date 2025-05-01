@@ -5,7 +5,7 @@ import perpustakaan.*;
 public class Main {
     public static void main(String[] args) {
         Buku buku1 = new NonFiksi("Madilog", "Tan Malaka", "Sejarah & Ilmu Pengetahuan");
-        Buku buku2 = new Fiksi("Hainuwele: Sang Putri Kelapa", "Lilis Hu", "Dongeng");
+        Buku buku2 = new Fiksi("Harry Potter and the Philosopher's Stone", "\tJ. K. Rowling", "Fantasy");
 
         buku1.displayInfo();
         buku2.displayInfo();
