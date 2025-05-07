@@ -1,10 +1,15 @@
+package com.praktikum.main;
+
+import com.praktikum.users.Admin;
+import com.praktikum.users.Mahasiswa;
+import com.praktikum.users.User;
+
 import java.util.Scanner;
 
-class LoginSystem {
+public class LoginSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-       
         Admin admin = new Admin("Admin148", "ADM001", "admin148", "admin148");
         Mahasiswa mahasiswa = new Mahasiswa("Rayhan Amrullah", "202410370110148");
 
@@ -14,37 +19,38 @@ class LoginSystem {
         System.out.print("Pilih jenis login (1/2): ");
 
         String pilihan = scanner.nextLine();
+        User user = null;
 
         switch (pilihan) {
-            case "1":
+            case "1" -> {
                 System.out.print("\nUsername: ");
                 String username = scanner.nextLine();
                 System.out.print("Password: ");
                 String password = scanner.nextLine();
 
                 if (admin.login(username, password)) {
-                    admin.displayInfo();
+                    user = admin;
                 } else {
                     System.out.println("\nUsername atau password salah!");
                 }
-                break;
-
-            case "2":
+            }
+            case "2" -> {
                 System.out.print("\nNama: ");
                 String nama = scanner.nextLine();
                 System.out.print("NIM: ");
                 String nim = scanner.nextLine();
 
                 if (mahasiswa.login(nama, nim)) {
-                    mahasiswa.displayInfo();
+                    user = mahasiswa;
                 } else {
                     System.out.println("\nNama atau NIM salah!");
                 }
-                break;
+            }
+            default -> System.out.println("\nPilihan tidak valid!");
+        }
 
-            default:
-                System.out.println("\nPilihan tidak valid!");
-                break;
+        if (user != null) {
+            user.displayAppMenu();
         }
 
         scanner.close();
