@@ -28,7 +28,7 @@ public class Admin extends User implements AdminActions {
             System.out.println("0. Logout");
             System.out.print("Pilih menu: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1 -> manageItems();
@@ -36,8 +36,8 @@ public class Admin extends User implements AdminActions {
                 case 0 -> System.out.println("Logout berhasil.");
                 default -> System.out.println("Pilihan tidak valid.");
             }
-            scanner.close();
         } while (choice != 0);
+        scanner.close();
     }
 
     @Override
@@ -49,4 +49,5 @@ public class Admin extends User implements AdminActions {
     public void manageUsers() {
         System.out.println(">> Fitur Kelola Mahasiswa Belum Tersedia <<");
     }
+
 }
