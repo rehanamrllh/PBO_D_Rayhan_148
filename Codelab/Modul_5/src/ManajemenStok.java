@@ -72,14 +72,20 @@ public class ManajemenStok {
                     int idx = scanner.nextInt();
                     scanner.nextLine();
                     Barang barang = daftarBarang.get(idx);
+                    if (barang.getStok() == 0) {
+                        System.out.println("Stok barang '" + barang.getNama() + "' sudah habis.");
+                        continue;
+                    }
                     System.out.print("Masukkan jumlah stok yang akan diambil: ");
                     int jumlah = scanner.nextInt();
                     scanner.nextLine();
                     if (jumlah > barang.getStok()) {
-                        throw new StokTidakCukupException("Tidak bisa dikurangi karena stok untuk '" + barang.getNama() + "' hanya tersisa " + barang.getStok());
+                        throw new StokTidakCukupException("Tidak bisa dikurangi karena stok untuk '" + barang.getNama()
+                                + "' hanya tersisa " + barang.getStok());
                     }
                     barang.setStok(barang.getStok() - jumlah);
-                    System.out.println("Stok barang '" + barang.getNama() + "' berhasil dikurangi. Sisa stok: " + barang.getStok());
+                    System.out.println("Stok barang '" + barang.getNama() + "' berhasil dikurangi. Sisa stok: "
+                            + barang.getStok());
                 } catch (InputMismatchException e) {
                     System.out.println("Input harus berupa angka!");
                     scanner.nextLine();
