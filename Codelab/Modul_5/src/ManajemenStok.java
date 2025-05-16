@@ -6,10 +6,12 @@ public class ManajemenStok {
     public static void main(String[] args) {
         ArrayList<Barang> daftarBarang = new ArrayList<>();
         // Data awal untuk pengujian
-        daftarBarang.add(new Barang("Pensil", 50));
-        daftarBarang.add(new Barang("Buku", 30));
-        daftarBarang.add(new Barang("Penghapus", 20));
-
+        daftarBarang.add(new Barang("Sprite", 50));
+        daftarBarang.add(new Barang("Fanta", 30));
+        daftarBarang.add(new Barang("Coca-cola", 20));
+        daftarBarang.add(new Barang("Pepsi", 40));
+        daftarBarang.add(new Barang("Big Cola", 10));
+        
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
