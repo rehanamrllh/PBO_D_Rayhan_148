@@ -23,7 +23,7 @@ public class ManajemenStok {
             int opsi;
             try {
                 opsi = scanner.nextInt();
-                scanner.nextLine(); // konsumsi newline
+                scanner.nextLine(); 
             } catch (InputMismatchException e) {
                 System.out.println("Input opsi harus berupa angka!");
                 scanner.nextLine();
