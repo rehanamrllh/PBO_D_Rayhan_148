@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ManajemenStok {
     public static void main(String[] args) {
         ArrayList<Barang> daftarBarang = new ArrayList<>();
-        // Data awal untuk pengujian
         daftarBarang.add(new Barang("Sprite", 50));
         daftarBarang.add(new Barang("Fanta", 30));
         daftarBarang.add(new Barang("Coca-cola", 20));
@@ -25,7 +24,7 @@ public class ManajemenStok {
             int opsi;
             try {
                 opsi = scanner.nextInt();
-                scanner.nextLine(); // konsumsi newline
+                scanner.nextLine(); 
             } catch (InputMismatchException e) {
                 System.out.println("Input opsi harus berupa angka!");
                 scanner.nextLine();
