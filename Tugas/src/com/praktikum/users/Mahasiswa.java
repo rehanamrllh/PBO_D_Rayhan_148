@@ -60,6 +60,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
     @Override
     public void viewReportedItems() {
         boolean ada = false;
+        System.out.println("\n== Daftar Laporan Barang ==");
         for (Item item : LoginSystem.reportedItems) {
             if ("Reported".equals(item.getStatus())) {
                 ada = true;
