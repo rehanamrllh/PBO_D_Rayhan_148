@@ -3,14 +3,19 @@ package com.praktikum.users;
 import com.praktikum.actions.MahasiswaActions;
 import com.praktikum.main.LoginSystem;
 import com.praktikum.models.Item;
+import com.praktikum.main.LoginSystem;
+import com.praktikum.models.Item;
 import java.util.Scanner;
 
 public class Mahasiswa extends User implements MahasiswaActions {
     private final Scanner scanner;
     int pilihan;
+    private final Scanner scanner;
+    int pilihan;
 
     public Mahasiswa(String nama, String nim) {
         super(nama, nim);
+        this.scanner = new Scanner(System.in);
         this.scanner = new Scanner(System.in);
     }
 
@@ -27,6 +32,14 @@ public class Mahasiswa extends User implements MahasiswaActions {
             System.out.println("2. Lihat Daftar Laporan");
             System.out.println("0. Logout");
             System.out.print("Pilih menu: ");
+            try {
+                pilihan = scanner.nextInt();
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println("Input harus berupa angka!");
+                scanner.nextLine();
+                continue;
+            }
             try {
                 pilihan = scanner.nextInt();
                 scanner.nextLine();
@@ -52,6 +65,8 @@ public class Mahasiswa extends User implements MahasiswaActions {
         String deskripsi = scanner.nextLine();
         System.out.print("Lokasi Terakhir/Ditemukan: ");
         String lokasi = scanner.nextLine();
+        Item item = new Item(namaBarang, deskripsi, lokasi, "Reported");
+        LoginSystem.reportedItems.add(item);
         Item item = new Item(namaBarang, deskripsi, lokasi, "Reported");
         LoginSystem.reportedItems.add(item);
         System.out.println("Laporan berhasil dibuat untuk barang: " + namaBarang);
