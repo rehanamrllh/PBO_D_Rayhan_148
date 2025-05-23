@@ -37,7 +37,7 @@ public class Admin extends User implements AdminActions {
             } catch (Exception e) {
                 System.out.println("Input harus berupa angka!");
                 scanner.nextLine();
-                continue;
+                continue; 
             }
             switch (pilihan) {
                 case 1 -> manageItems();
@@ -45,7 +45,7 @@ public class Admin extends User implements AdminActions {
                 case 0 -> System.out.println("Logout berhasil.");
                 default -> {
                     System.out.println("Pilihan tidak valid.");
-                    continue;
+                    continue; 
                 }
             }
         } while (pilihan != 0);
@@ -53,7 +53,7 @@ public class Admin extends User implements AdminActions {
 
     @Override
     public void manageItems() {
-        int pilihan = 0;
+        int sub = -1;
         do {
             System.out.println("\n== Kelola Laporan Barang ==");
             System.out.println("1. Lihat Semua Laporan");
@@ -61,14 +61,14 @@ public class Admin extends User implements AdminActions {
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
             try {
-                pilihan = scanner.nextInt();
+                sub = scanner.nextInt();
                 scanner.nextLine();
             } catch (Exception e) {
                 System.out.println("Input harus berupa angka!");
                 scanner.nextLine();
                 continue;
             }
-            switch (pilihan) {
+            switch (sub) {
                 case 1 -> {
                     if (LoginSystem.reportedItems.isEmpty()) {
                         System.out.println("Belum ada laporan barang.");
@@ -76,14 +76,13 @@ public class Admin extends User implements AdminActions {
                         int idx = 0;
                         for (Item item : LoginSystem.reportedItems) {
                             System.out.println(idx++ + ". " + item.getItemName() + " | " + item.getDescription()
-                            + " | Lokasi: " + item.getLocation() + " | Status: " + item.getStatus());
+                                    + " | Lokasi: " + item.getLocation() + " | Status: " + item.getStatus());
                         }
                     }
                 }
                 case 2 -> {
                     int idx = 0;
                     boolean ada = false;
-                    System.out.println("\n== Daftar Laporan Barang ==");
                     for (Item item : LoginSystem.reportedItems) {
                         if ("Reported".equals(item.getStatus())) {
                             System.out.println(idx + ". " + item.getItemName() + " | " + item.getDescription()
@@ -101,7 +100,7 @@ public class Admin extends User implements AdminActions {
                         int pilih = scanner.nextInt();
                         scanner.nextLine();
                         Item item = LoginSystem.reportedItems.get(pilih);
-                        if ("Claimed".equals(item.getStatus())) {
+                        if (!"Reported".equals(item.getStatus())) {
                             System.out.println("Barang sudah di-claim.");
                         } else {
                             item.setStatus("Claimed");
@@ -119,45 +118,31 @@ public class Admin extends User implements AdminActions {
                 }
                 default -> {
                     System.out.println("Pilihan tidak valid.");
-                    continue;
+                    continue; 
                 }
             }
-        } while (pilihan != 0);
+        } while (sub != 0);
     }
 
     @Override
     public void manageUsers() {
-        int pilihan = 0;
+        int sub = -1;
         do {
             System.out.println("\n== Kelola Data Mahasiswa ==");
-            System.out.println("1. Lihat daftar Mahasiswa");
-            System.out.println("2. Tambah Mahasiswa");
-            System.out.println("3. Hapus Mahasiswa");
+            System.out.println("1. Tambah Mahasiswa");
+            System.out.println("2. Hapus Mahasiswa");
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
             try {
-                pilihan = scanner.nextInt();
+                sub = scanner.nextInt();
                 scanner.nextLine();
             } catch (Exception e) {
                 System.out.println("Input harus berupa angka!");
                 scanner.nextLine();
                 continue;
             }
-            switch (pilihan) {
+            switch (sub) {
                 case 1 -> {
-                    System.out.println("\n== Daftar Mahasiswa ==");
-                    boolean ketemu = false;
-                    for (User usr : LoginSystem.userList) {
-                        if (usr instanceof Mahasiswa) {
-                            System.out.println("- " + usr.getNama() + " | NIM: " + usr.getNim());
-                            ketemu = true;
-                        }
-                    }
-                    if (!ketemu) {
-                        System.out.println("Belum ada data mahasiswa.");
-                    }
-                }
-                case 2 -> {
                     System.out.print("Nama Mahasiswa: ");
                     String nama = scanner.nextLine();
                     System.out.print("NIM: ");
@@ -165,20 +150,20 @@ public class Admin extends User implements AdminActions {
                     LoginSystem.userList.add(new Mahasiswa(nama, nim));
                     System.out.println("Mahasiswa berhasil ditambahkan.");
                 }
-                case 3 -> {
+                case 2 -> {
                     System.out.print("Masukkan NIM Mahasiswa yang akan dihapus: ");
                     String nim = scanner.nextLine();
-                    boolean ketemu = false;
+                    boolean found = false;
                     for (int i = 0; i < LoginSystem.userList.size(); i++) {
-                        User usr = LoginSystem.userList.get(i);
-                        if (usr instanceof Mahasiswa && usr.getNim().equals(nim)) {
+                        User u = LoginSystem.userList.get(i);
+                        if (u instanceof Mahasiswa && u.getNim().equals(nim)) {
                             LoginSystem.userList.remove(i);
                             System.out.println("Mahasiswa berhasil dihapus.");
-                            ketemu = true;
+                            found = true;
                             break;
                         }
                     }
-                    if (!ketemu) {
+                    if (!found) {
                         System.out.println("Mahasiswa dengan NIM tersebut tidak ditemukan.");
                     }
                 }
@@ -186,10 +171,10 @@ public class Admin extends User implements AdminActions {
                 }
                 default -> {
                     System.out.println("Pilihan tidak valid.");
-                    continue;
+                    continue; // Kembali ke awal loop jika salah input angka
                 }
             }
-        } while (pilihan != 0);
+        } while (sub != 0);
     }
 
 }
