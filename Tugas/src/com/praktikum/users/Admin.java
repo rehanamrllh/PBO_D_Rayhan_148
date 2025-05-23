@@ -4,15 +4,10 @@ import com.praktikum.actions.AdminActions;
 import com.praktikum.main.LoginSystem;
 import com.praktikum.models.Item;
 import java.util.Scanner;
-import com.praktikum.main.LoginSystem;
-import com.praktikum.models.Item;
-import java.util.Scanner;
 
 public class Admin extends User implements AdminActions {
     private String username;
     private String password;
-    int pilihan;
-    private Scanner scanner;
     int pilihan;
     private Scanner scanner;
 
@@ -20,7 +15,6 @@ public class Admin extends User implements AdminActions {
         super(nama, nim);
         this.username = username;
         this.password = password;
-        this.scanner = new Scanner(System.in);
         this.scanner = new Scanner(System.in);
     }
 
@@ -54,7 +48,6 @@ public class Admin extends User implements AdminActions {
                     continue;
                 }
             }
-        } while (pilihan != 0);
         } while (pilihan != 0);
     }
 
