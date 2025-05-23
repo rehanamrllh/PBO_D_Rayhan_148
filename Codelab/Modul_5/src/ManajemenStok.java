@@ -26,7 +26,7 @@ public class ManajemenStok {
                 opsi = scanner.nextInt();
                 scanner.nextLine(); 
             } catch (InputMismatchException e) {
-                System.out.println("Input opsi harus berupa angka!");
+                System.out.println("Input opsia harus berupa angka!");
                 scanner.nextLine();
                 continue;
             }
