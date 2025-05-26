@@ -21,6 +21,10 @@ public class LoginSystem {
         reportedItems.add(new Item("Buku", "Buku hilang di perpustakaan", "Perpustakaan", "Reported"));
         reportedItems.add(new Item("Kunci", "Kunci hilang di parkiran", "Parkiran", "Claimed"));
 
+        reportedItems.add(new Item("Laptop", "Laptop hilang di kampus", "Kampus", "Reported"));
+        reportedItems.add(new Item("Buku", "Buku hilang di perpustakaan", "Perpustakaan", "Reported"));
+        reportedItems.add(new Item("Kunci", "Kunci hilang di parkiran", "Parkiran", "Claimed"));
+
         boolean keluar = false;
         while (!keluar) {
             User user = null;
