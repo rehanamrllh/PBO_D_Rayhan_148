@@ -25,7 +25,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
             System.out.println("\n== Menu Mahasiswa ==");
             System.out.println("1. Laporkan Barang Temuan/Hilang");
             System.out.println("2. Lihat Daftar Laporan");
-            System.out.println("0. Logout");
+            System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
             try {
                 pilihan = scanner.nextInt();
@@ -60,6 +60,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
     @Override
     public void viewReportedItems() {
         boolean ada = false;
+        System.out.println("\n== Daftar Laporan Barang ==");
         for (Item item : LoginSystem.reportedItems) {
             if ("Reported".equals(item.getStatus())) {
                 ada = true;
