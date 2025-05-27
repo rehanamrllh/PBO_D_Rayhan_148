@@ -61,8 +61,8 @@ public class TebakAngkaApp extends Application {
         root.setStyle("-fx-background-color: #f3f8ff;");
 
         // Event handler
-        tebakButton.setOnAction(e -> prosesTebakan());
-        inputField.setOnAction(e -> prosesTebakan());
+        tebakButton.setOnAction(_ -> prosesTebakan());
+        inputField.setOnAction(_ -> prosesTebakan());
 
         Scene scene = new Scene(root, 420, 260);
         primaryStage.setTitle("Aplikasi Tebak Angka");
