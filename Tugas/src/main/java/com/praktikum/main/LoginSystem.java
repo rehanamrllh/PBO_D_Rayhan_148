@@ -21,6 +21,10 @@ public class LoginSystem {
         DataStore.reportedItems.add(new Item("Laptop", "Laptop hilang di kampus", "Kampus", "Reported"));
         DataStore.reportedItems.add(new Item("Buku", "Buku hilang di perpustakaan", "Perpustakaan", "Reported"));
         DataStore.reportedItems.add(new Item("Kunci", "Kunci hilang di parkiran", "Parkiran", "Claimed"));
+        DataStore.reportedItems.add(new Item("Tas", "Tas hilang di kantin", "Kantin", "Reported"));
+        DataStore.reportedItems.add(new Item("Handphone", "Handphone hilang di kelas", "Kelas", "Claimed"));
+        DataStore.reportedItems.add(new Item("Jam Tangan", "Jam tangan hilang di ruang dosen", "Ruang Dosen", "Reported"));
+        DataStore.reportedItems.add(new Item("Sepatu", "Sepatu hilang di lapangan", "Lapangan", "Reported"));
     }
 
     public static User cariUser(String input1, String input2, boolean isAdmin) {
