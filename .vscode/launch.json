@@ -13,46 +13,19 @@
         },
         {
             "type": "java",
-            "name": "Main",
+            "name": "SimpleGUIApp",
             "request": "launch",
-            "mainClass": "Main",
-            "projectName": "TUGAS_2248d91"
-        },
-        {
-            "type": "java",
-            "name": "ManajemenStok",
-            "request": "launch",
-            "mainClass": "ManajemenStok",
-            "projectName": "TUGAS_2248d91"
-        },
-        {
-            "type": "java",
-            "name": "Main(1)",
-            "request": "launch",
-            "mainClass": "app.Main",
-            "projectName": "TUGAS_2248d91"
-        },
-        {
-            "type": "java",
-            "name": "MainApp",
-            "request": "launch",
-            "mainClass": "com.praktikum.gui.MainApp",
+            "mainClass": "main.java.com.experiment.SimpleGUIApp",
             "projectName": "TUGAS_2248d91",
             "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-24.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
-            "name": "LoginSystem",
+            "name": "MainApp",
             "request": "launch",
-            "mainClass": "com.praktikum.main.LoginSystem",
-            "projectName": "TUGAS_2248d91"
-        },
-        {
-            "type": "java",
-            "name": "Main(2)",
-            "request": "launch",
-            "mainClass": "com.tebakangka.Main",
-            "projectName": "TUGAS_2248d91"
+            "mainClass": "main.java.com.praktikum.gui.MainApp",
+            "projectName": "TUGAS_2248d91",
+            "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-24.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
@@ -61,6 +34,13 @@
             "mainClass": "com.tebakangka.TebakAngkaApp",
             "projectName": "TUGAS_2248d91",
             "vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-24.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "main.java.com.praktikum.users.Test",
+            "projectName": "TUGAS_2248d91"
         }
     ]
 }

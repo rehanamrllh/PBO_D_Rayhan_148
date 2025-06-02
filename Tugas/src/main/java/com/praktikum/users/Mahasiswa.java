@@ -1,8 +1,8 @@
-package com.praktikum.users;
+package main.java.com.praktikum.users;
 
-import com.praktikum.actions.MahasiswaActions;
-import com.praktikum.main.LoginSystem;
-import com.praktikum.models.Item;
+import main.java.com.praktikum.actions.MahasiswaActions;
+import main.java.com.praktikum.data.DataStore;
+import main.java.com.praktikum.data.Item;
 import java.util.Scanner;
 
 public class Mahasiswa extends User implements MahasiswaActions {
@@ -53,7 +53,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
         System.out.print("Lokasi Terakhir/Ditemukan: ");
         String lokasi = scanner.nextLine();
         Item item = new Item(namaBarang, deskripsi, lokasi, "Reported");
-        LoginSystem.reportedItems.add(item);
+        DataStore.reportedItems.add(item);
         System.out.println("Laporan berhasil dibuat untuk barang: " + namaBarang);
     }
 
@@ -61,7 +61,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
     public void viewReportedItems() {
         boolean ada = false;
         System.out.println("\n== Daftar Laporan Barang ==");
-        for (Item item : LoginSystem.reportedItems) {
+        for (Item item : DataStore.reportedItems) {
             if ("Reported".equals(item.getStatus())) {
                 ada = true;
                 System.out.println(

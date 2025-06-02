@@ -1,4 +1,4 @@
-package com.praktikum.users;
+package main.java.com.praktikum.users;
 
 public abstract class User {
     private String nama;

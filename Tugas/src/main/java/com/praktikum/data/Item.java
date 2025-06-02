@@ -1,4 +1,4 @@
-package com.praktikum.models;
+package main.java.com.praktikum.data;
 
 public class Item {
     private String itemName;
