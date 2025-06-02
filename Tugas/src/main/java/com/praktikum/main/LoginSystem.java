@@ -11,12 +11,10 @@ public class LoginSystem {
     private void initializeData() {
         DataStore.userList.add(new Admin("Rayhan Amrullah", "202410370110148", "admin148", "admin148"));
         DataStore.userList.add(new Admin("Daffa Ichsanudin", "202410370110158", "admin158", "admin158"));
-        DataStore.userList.add(new Admin("", "", "a", "a"));
        
         DataStore.userList.add(new Mahasiswa("Rayhan Amrullah", "202410370110148"));
         DataStore.userList.add(new Mahasiswa("Daffa Ichsanudin", "202410370110158"));
         DataStore.userList.add(new Mahasiswa("Asep Kurniawan", "202410370110122"));
-        DataStore.userList.add(new Mahasiswa("a", "a"));
 
         DataStore.reportedItems.add(new Item("Laptop", "Laptop hilang di kampus", "Kampus", "Reported"));
         DataStore.reportedItems.add(new Item("Buku", "Buku hilang di perpustakaan", "Perpustakaan", "Reported"));
