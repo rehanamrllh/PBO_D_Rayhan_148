@@ -1,8 +1,8 @@
-package com.praktikum.users;
+package main.java.com.praktikum.users;
 
-import com.praktikum.actions.AdminActions;
-import com.praktikum.main.LoginSystem;
-import com.praktikum.models.Item;
+import main.java.com.praktikum.actions.AdminActions;
+import main.java.com.praktikum.data.Item;
+import main.java.com.praktikum.data.DataStore;
 import java.util.Scanner;
 
 public class Admin extends User implements AdminActions {
@@ -70,13 +70,13 @@ public class Admin extends User implements AdminActions {
             }
             switch (pilihan) {
                 case 1 -> {
-                    if (LoginSystem.reportedItems.isEmpty()) {
+                    if (DataStore.reportedItems.isEmpty()) {
                         System.out.println("Belum ada laporan barang.");
                     } else {
                         int idx = 0;
-                        for (Item item : LoginSystem.reportedItems) {
+                        for (Item item : DataStore.reportedItems) {
                             System.out.println(idx++ + ". " + item.getItemName() + " | " + item.getDescription()
-                            + " | Lokasi: " + item.getLocation() + " | Status: " + item.getStatus());
+                                    + " | Lokasi: " + item.getLocation() + " | Status: " + item.getStatus());
                         }
                     }
                 }
@@ -84,7 +84,7 @@ public class Admin extends User implements AdminActions {
                     int idx = 0;
                     boolean ada = false;
                     System.out.println("\n== Daftar Laporan Barang ==");
-                    for (Item item : LoginSystem.reportedItems) {
+                    for (Item item : DataStore.reportedItems) {
                         if ("Reported".equals(item.getStatus())) {
                             System.out.println(idx + ". " + item.getItemName() + " | " + item.getDescription()
                                     + " | Lokasi: " + item.getLocation());
@@ -100,7 +100,7 @@ public class Admin extends User implements AdminActions {
                     try {
                         int pilih = scanner.nextInt();
                         scanner.nextLine();
-                        Item item = LoginSystem.reportedItems.get(pilih);
+                        Item item = DataStore.reportedItems.get(pilih);
                         if ("Claimed".equals(item.getStatus())) {
                             System.out.println("Barang sudah di-claim.");
                         } else {
@@ -147,7 +147,7 @@ public class Admin extends User implements AdminActions {
                 case 1 -> {
                     System.out.println("\n== Daftar Mahasiswa ==");
                     boolean ketemu = false;
-                    for (User usr : LoginSystem.userList) {
+                    for (User usr : DataStore.userList) {
                         if (usr instanceof Mahasiswa) {
                             System.out.println("- " + usr.getNama() + " | NIM: " + usr.getNim());
                             ketemu = true;
@@ -162,17 +162,17 @@ public class Admin extends User implements AdminActions {
                     String nama = scanner.nextLine();
                     System.out.print("NIM: ");
                     String nim = scanner.nextLine();
-                    LoginSystem.userList.add(new Mahasiswa(nama, nim));
+                    DataStore.userList.add(new Mahasiswa(nama, nim));
                     System.out.println("Mahasiswa berhasil ditambahkan.");
                 }
                 case 3 -> {
                     System.out.print("Masukkan NIM Mahasiswa yang akan dihapus: ");
                     String nim = scanner.nextLine();
                     boolean ketemu = false;
-                    for (int i = 0; i < LoginSystem.userList.size(); i++) {
-                        User usr = LoginSystem.userList.get(i);
+                    for (int i = 0; i < DataStore.userList.size(); i++) {
+                        User usr = DataStore.userList.get(i);
                         if (usr instanceof Mahasiswa && usr.getNim().equals(nim)) {
-                            LoginSystem.userList.remove(i);
+                            DataStore.userList.remove(i);
                             System.out.println("Mahasiswa berhasil dihapus.");
                             ketemu = true;
                             break;
