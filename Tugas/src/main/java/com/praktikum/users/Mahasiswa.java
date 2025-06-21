@@ -48,9 +48,9 @@ public class Mahasiswa extends User implements MahasiswaActions {
     public void reportItem() {
         System.out.print("Nama Barang: ");
         String namaBarang = scanner.nextLine();
-        System.out.print("Deskripsi Barang: ");
+        System.out.print("Deskripsi Barng: ");
         String deskripsi = scanner.nextLine();
-        System.out.print("Lokasi Terakhir/Ditemukan: ");
+        System.out.print("Lokasi Terakhir/Waktu: ");
         String lokasi = scanner.nextLine();
         Item item = new Item(namaBarang, deskripsi, lokasi, "Reported");
         DataStore.reportedItems.add(item);
@@ -60,7 +60,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
     @Override
     public void viewReportedItems() {
         boolean ada = false;
-        System.out.println("\n== Daftar Laporan Barang ==");
+        System.out.println("\n== Daftar Laporan Barang==");
         for (Item item : DataStore.reportedItems) {
             if ("Reported".equals(item.getStatus())) {
                 ada = true;
